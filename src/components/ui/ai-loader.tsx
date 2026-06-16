@@ -1,27 +1,13 @@
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-
-export const Component = () => {
-  const [count, setCount] = useState(0);
-
+export default function AiLoader() {
   return (
-    <div className={""}>
-     
-<div class="loader-wrapper">
-  <span class="loader-letter">G</span>
-  <span class="loader-letter">e</span>
-  <span class="loader-letter">n</span>
-  <span class="loader-letter">e</span>
-  <span class="loader-letter">r</span>
-  <span class="loader-letter">a</span>
-  <span class="loader-letter">t</span>
-  <span class="loader-letter">i</span>
-  <span class="loader-letter">n</span>
-  <span class="loader-letter">g</span>
-
-  <div class="loader"></div>
-</div>
-
+    <div className="flex items-center gap-1">
+      {Array.from({ length: 10 }).map((_, i) => (
+        <span
+          key={i}
+          className="w-1 h-4 bg-primary rounded-full animate-pulse"
+          style={{ animationDelay: `${i * 0.1}s` }}
+        />
+      ))}
     </div>
   );
-};
+}
